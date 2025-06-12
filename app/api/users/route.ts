@@ -4,7 +4,7 @@ import { users } from "@/db/schema/users";
 export async function GET(request: Request) {
     try {
         const allUsers = await db.select({
-            name: users.id,
+            name: users.user_id,
             email: users.email
         }).from(users)
         return Response.json(allUsers)
